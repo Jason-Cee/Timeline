@@ -44,6 +44,7 @@ h1 {
   align-items: center;
   justify-items: center;
   padding: 10%;
+  overflow: hidden;
 }
 
 .line {
@@ -92,6 +93,9 @@ h1 {
 }
 
 @media screen and (max-width: 800px) {
+  h1 {
+    font-size: 200%;
+  }
   .timeline-container {
     grid-template-columns: 10% 1fr;
   }
