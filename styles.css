@@ -17,6 +17,7 @@ body {
   justify-items: center;
   background-image: url(./images/schwarz-Liberty-Walk-Widebody-Lamborghini-Aventador-Tuning-7.jpg);
   background-attachment: fixed;
+  background-position: center;
   background-size: cover;
   /* background: url(https://picsum.photos/1200?random=1);
   background-size: cover;
@@ -38,13 +39,14 @@ h1 {
   display: grid;
   grid-template-columns: 1fr 10% 1fr;
   grid-template-rows: repeat(4, 1fr);
-  background: url(./images/c16305e2d89dcd51ff9e045ae1d96f86.jpg);
+  background: url(./images/c63.jpg);
   background-size: cover;
   background-attachment: fixed;
   align-items: center;
   justify-items: center;
   padding: 10%;
   overflow: hidden;
+  background-position: center;
 }
 
 .line {
