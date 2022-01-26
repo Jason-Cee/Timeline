@@ -5,108 +5,115 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: tahoma, sans-serif;
+  background-image: url(/images/back.jpeg);
+  background-size: cover;
 }
 
-.landing {
-  height: 100vh;
-  color: black;
-  background-color: wheat;
-  display: grid;
-  align-items: flex-start;
-  justify-items: center;
-  background-image: url(./images/schwarz-Liberty-Walk-Widebody-Lamborghini-Aventador-Tuning-7.jpg);
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
-  /* background: url(https://picsum.photos/1200?random=1);
-  background-size: cover;
-  background-attachment: fixed; */
-}
-
-h1 {
-  text-transform: uppercase;
-  font-size: 600%;
-  background: rgba(255, 255, 255, 0.75);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(7.5px);
-  -webkit-backdrop-filter: blur(7.5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.timeline-container {
-  display: grid;
-  grid-template-columns: 1fr 10% 1fr;
-  grid-template-rows: repeat(4, 1fr);
-  background: url(./images/c63.jpg);
-  background-size: cover;
-  background-attachment: fixed;
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
   align-items: center;
-  justify-items: center;
-  padding: 10%;
-  overflow: hidden;
-  background-position: center;
+  justify-content: center;
+  padding: 100px 0;
 }
 
-.line {
-  width: 10px;
-  height: 100%;
-  grid-column-start: 2;
-  grid-row-start: 1;
-  grid-row-end: 5;
-  background: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
+.timeline {
+  width: 80%;
+  height: auto;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
 }
 
-.item-1 {
-  grid-column: 3;
-  grid-row: 1;
+.timeline ul {
+  list-style: none;
 }
 
-.item-2 {
-  grid-column: 1;
-  grid-row: 2;
-}
-
-.item-3 {
-  grid-column: 3;
-  grid-row: 3;
-}
-
-.item-4 {
-  grid-column: 1;
-  grid-row: 4;
-}
-
-.timeline-item {
+.timeline ul li {
+  padding: 20px;
+  background-color: #4B3D62;
   color: white;
-  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-  padding: 10%;
-  margin: 10%;
-  background: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
+  margin-bottom: 20px;
 }
 
-@media screen and (max-width: 800px) {
-  h1 {
-    font-size: 200%;
-  }
-  .timeline-container {
-    grid-template-columns: 10% 1fr;
-  }
+.timeline ul li:last-child {
+  margin-bottom: 0;
+}
 
-  .line {
-    grid-column-start: 1;
-  }
+.timeline-content h1{
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
 
-  .timeline-item {
-    grid-column: 2;
+
+
+.timeline-content p {
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 300;
+}
+
+.timeline-content .date{
+  font-size: 13px;
+  font-weight: 300;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+@media only screen and (min-width: 768px) {
+  .timeline::before {
+    content: " ";
+    position: absolute;
+    height: 100%;
+    width: 2px;
+    background: gray;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .timeline ul li {
+    width: 50%;
+    margin-bottom: 50px;
+    position: relative;
+  }
+  .timeline ul li:nth-child(odd) {
+    float: left;
+    clear: right;
+    transform: translateX(-30px);
+    border-radius: 20px 0px 20px 20px;
+  }
+  .timeline ul li:nth-child(even) {
+    float: right;
+    clear: left;
+    transform: translateX(30px);
+    border-radius: 0px 20px 20px 20px;
+  }
+  .timeline ul li::after {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    background: gray;
+    border-radius: 50%;
+    top: 0;
+  }
+  .timeline ul li:nth-child(odd)::after {
+    transform: translate(50%, -50%);
+    right: -30px;
+  }
+  .timeline ul li:nth-child(even)::after {
+    transform: translate(-50%, -50%);
+    left: -30px;
+  }
+  .timeline ul li:hover::after {
+    background-color: #F1FAF4;
+  }
+  .timeline-content .date {
+    position: absolute;
+    top: -20px;
   }
 }
